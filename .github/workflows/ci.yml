@@ -1,0 +1,19 @@
+on:
+  push:
+    branches: [master]
+name: Continuos integration
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar y checkout de la rama actual
+        uses: actions/checkout@v1
+      - name: Instalar dependencias
+        run: npm i
+      - name: Ejecutando tests
+        run: npm test
+      - name: Create artefacto
+        uses: actions/upload-artifact@v3
+        with:
+          name: codeNode
+          path: .
