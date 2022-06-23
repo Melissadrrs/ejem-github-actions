@@ -12,5 +12,4 @@ function mensaje(req, resp) {
 function formula(number){
  return number*2
 }
-
 module.exports = { mensaje, formula}
